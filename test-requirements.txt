@@ -2,3 +2,4 @@ testtools>=1.4.0 # MIT
 oslo.concurrency
 mock
 os-vif
+zipp>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
