@@ -3,3 +3,4 @@ nova
 oslo.config
 thrift
 os-vif
+jwcrypto>=1.5.6 # not directly required, pinned by Snyk to avoid a vulnerability
