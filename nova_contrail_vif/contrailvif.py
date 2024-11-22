@@ -89,8 +89,8 @@ class ContrailNetworkAPI(API):
     def __init__(self):
         # MonkeyPatch the compute_utils.get_nw_info_for_instance with
         # patched_get_nw_info_for_instance to enable overwriting vif_driver
+        global orig_get_nw_info_for_instance
         if orig_get_nw_info_for_instance is None:
-            global orig_get_nw_info_for_instance
             orig_get_nw_info_for_instance = compute_utils.get_nw_info_for_instance
             compute_utils.get_nw_info_for_instance = patched_get_nw_info_for_instance
         # Store the compute manager object to overwrite vif_driver
