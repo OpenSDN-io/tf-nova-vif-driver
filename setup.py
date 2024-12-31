@@ -13,7 +13,7 @@ def requirements(filename):
 
 setuptools.setup(
     name='nova_contrail_vif',
-    version='0.1',
+    version='0.1.dev0',
 
     author="OpenContrail",
     author_email="dev@lists.opencontrail.org",
