@@ -33,6 +33,7 @@ env.Default(sdist_gen)
 env.Alias('nova-contrail-vif', sdist_gen)
 
 if 'install' in BUILD_TARGETS:
-    cmd = 'cd ' + Dir('.').path + ' && python3 setup.py install %s'
-    env.Alias('install',
-              env.Command(None, sources, cmd % env['PYTHON_INSTALL_OPT']))
+    install_whl_cmd = env.Command(
+        None, sources,
+        'cd ' + Dir('.').path + ' && python3 setup.py bdist_wheel --dist-dir /pip')
+    env.Alias('install', install_whl_cmd)
